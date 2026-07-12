@@ -1,0 +1,54 @@
+// 台灣微光希望關懷協會 官方網站 — 共用互動
+(function () {
+  'use strict';
+
+  // 行動版導覽開合
+  var toggle = document.querySelector('.nav-toggle');
+  var nav = document.querySelector('.main-nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+      }
+    });
+  }
+
+  // 捲動顯示
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && reveals.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // 展覽倒數（首頁通告列，開展後自動改顯示展期中）
+  var cd = document.getElementById('expo-countdown');
+  if (cd) {
+    var opening = new Date('2026-08-01T14:00:00+08:00');
+    var closing = new Date('2026-08-28T18:00:00+08:00');
+    var now = new Date();
+    if (now < opening) {
+      var days = Math.ceil((opening - now) / 86400000);
+      cd.textContent = '開幕倒數 ' + days + ' 天';
+    } else if (now <= closing) {
+      cd.textContent = '展覽進行中';
+    } else {
+      cd.textContent = '展覽已圓滿落幕';
+    }
+  }
+
+  // 頁尾年份
+  var y = document.getElementById('year');
+  if (y) { y.textContent = new Date().getFullYear(); }
+})();
