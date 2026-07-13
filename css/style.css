@@ -115,10 +115,11 @@ li { margin-bottom: .4em; }
 }
 .nav-toggle svg { width: 22px; height: 22px; }
 
-@media (max-width: 1060px) and (min-width: 961px) {
+@media (max-width: 1200px) and (min-width: 1025px) {
   .brand .en { display: none; }
+  .main-nav a { padding: 8px 11px; font-size: 15px; }
 }
-@media (max-width: 960px) {
+@media (max-width: 1024px) {
   .nav-toggle { display: inline-flex; }
   .main-nav {
     display: none;
@@ -351,6 +352,94 @@ li { margin-bottom: .4em; }
 .news-card h3 a { color: var(--c-ink); text-decoration: none; }
 .news-card h3 a:hover { color: var(--c-accent-dark); }
 .news-card .excerpt { font-size: 14.5px; color: var(--c-muted); margin: 0; flex: 1; }
+
+/* =====================================================
+   活動集錦（相簿、燈箱）
+   ===================================================== */
+.album { margin-bottom: 56px; }
+.album:last-child { margin-bottom: 0; }
+.album-head { display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap; border-bottom: 2px solid var(--c-line); padding-bottom: 12px; margin-bottom: 22px; }
+.album-head h2 { margin: 0; font-size: clamp(20px, 3vw, 25px); }
+.album-head time { font-size: 14px; color: var(--c-muted); letter-spacing: .06em; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.album-head .place { font-size: 14px; color: var(--c-muted); }
+.album > p.album-desc { color: var(--c-muted); font-size: 15.5px; margin: -6px 0 20px; }
+
+.gallery { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); }
+.gallery .shot {
+  position: relative; display: block; padding: 0; border: 0; cursor: pointer;
+  aspect-ratio: 1 / 1; border-radius: 12px; overflow: hidden;
+  background: var(--c-card) center/cover no-repeat;
+  box-shadow: var(--shadow);
+}
+.gallery .shot.tall { aspect-ratio: 3 / 4; }
+.gallery .shot.wide { grid-column: span 2; aspect-ratio: 16 / 10; }
+@media (max-width: 520px) { .gallery .shot.wide { grid-column: span 1; aspect-ratio: 1 / 1; } }
+.gallery .shot img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s ease; }
+.gallery .shot:hover img { transform: scale(1.05); }
+.gallery .shot .cap {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 22px 12px 9px; font-size: 12.5px; color: #fff; text-align: left;
+  background: linear-gradient(transparent, rgba(20,14,8,.72)); opacity: 0; transition: opacity .25s;
+}
+.gallery .shot:hover .cap, .gallery .shot:focus-visible .cap { opacity: 1; }
+
+/* 空狀態相簿卡 */
+.album-empty {
+  display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
+}
+.album-empty .slot {
+  aspect-ratio: 1 / 1; border-radius: 12px;
+  border: 1.5px dashed var(--c-line);
+  background: color-mix(in srgb, var(--c-gold) 6%, var(--c-card));
+  display: flex; align-items: center; justify-content: center;
+  color: color-mix(in srgb, var(--c-muted) 70%, var(--c-line));
+}
+.album-empty .slot svg { width: 34px; height: 34px; }
+.coming {
+  text-align: center; padding: 40px 24px;
+  border: 1.5px dashed var(--c-line); border-radius: var(--radius);
+  background: color-mix(in srgb, var(--c-gold) 6%, var(--c-card));
+  color: var(--c-muted);
+}
+.coming .ic { width: 44px; height: 44px; margin: 0 auto 12px; color: var(--c-accent); }
+.coming h3 { color: var(--c-ink); margin-bottom: 6px; }
+.coming p { margin: 0; font-size: 15px; }
+
+/* 影片區 */
+.video-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); }
+.video-card { background: var(--c-card); border: 1px solid var(--c-line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.video-card .frame { aspect-ratio: 16 / 9; background: linear-gradient(140deg, var(--c-deep-2), var(--c-deep)); position: relative; }
+.video-card .frame iframe, .video-card .frame video { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-card .frame.placeholder { display: flex; align-items: center; justify-content: center; color: var(--c-cream-muted); }
+.video-card .frame.placeholder svg { width: 54px; height: 54px; opacity: .8; }
+.video-card .vbody { padding: 16px 20px 18px; }
+.video-card .vbody h3 { font-size: 17px; margin: 0 0 4px; }
+.video-card .vbody p { font-size: 14px; color: var(--c-muted); margin: 0; }
+
+/* 燈箱 */
+.lightbox {
+  position: fixed; inset: 0; z-index: 300;
+  background: rgba(20, 14, 8, .9);
+  display: none; align-items: center; justify-content: center; padding: 24px;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 82vh; border-radius: 8px; box-shadow: 0 20px 60px rgba(0,0,0,.5); }
+.lightbox .lb-cap { position: absolute; bottom: 20px; left: 0; right: 0; text-align: center; color: var(--c-cream); font-size: 14px; padding: 0 24px; }
+.lightbox .lb-close {
+  position: absolute; top: 16px; right: 16px; width: 46px; height: 46px;
+  background: rgba(255,255,255,.12); border: 0; border-radius: 50%; color: #fff; cursor: pointer;
+  font-size: 26px; line-height: 1; display: flex; align-items: center; justify-content: center;
+}
+.lightbox .lb-close:hover { background: rgba(255,255,255,.24); }
+.lightbox .lb-nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 48px; height: 48px; background: rgba(255,255,255,.12); border: 0; border-radius: 50%;
+  color: #fff; cursor: pointer; font-size: 24px; display: flex; align-items: center; justify-content: center;
+}
+.lightbox .lb-nav:hover { background: rgba(255,255,255,.24); }
+.lightbox .lb-prev { left: 16px; }
+.lightbox .lb-next { right: 16px; }
+@media (max-width: 560px) { .lightbox .lb-nav { top: auto; bottom: 20px; transform: none; } .lightbox .lb-prev { left: 24px; } .lightbox .lb-next { right: 24px; } .lightbox .lb-cap { bottom: 78px; } }
 
 /* =====================================================
    夥伴

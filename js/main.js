@@ -51,4 +51,48 @@
   // 頁尾年份
   var y = document.getElementById('year');
   if (y) { y.textContent = new Date().getFullYear(); }
+
+  // 活動集錦：燈箱
+  var shots = Array.prototype.slice.call(document.querySelectorAll('.gallery .shot[data-full]'));
+  var lb = document.getElementById('lightbox');
+  if (shots.length && lb) {
+    var lbImg = lb.querySelector('.lb-img');
+    var lbCap = lb.querySelector('.lb-cap');
+    var current = 0;
+    var lastFocus = null;
+
+    function show(i) {
+      current = (i + shots.length) % shots.length;
+      var s = shots[current];
+      lbImg.src = s.getAttribute('data-full');
+      lbImg.alt = s.getAttribute('data-cap') || '';
+      lbCap.textContent = s.getAttribute('data-cap') || '';
+    }
+    function open(i) {
+      lastFocus = document.activeElement;
+      show(i);
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden', 'false');
+      lb.querySelector('.lb-close').focus();
+    }
+    function close() {
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden', 'true');
+      lbImg.src = '';
+      if (lastFocus) { lastFocus.focus(); }
+    }
+    shots.forEach(function (s, i) {
+      s.addEventListener('click', function () { open(i); });
+    });
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { show(current + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) { close(); } });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) { return; }
+      if (e.key === 'Escape') { close(); }
+      else if (e.key === 'ArrowLeft') { show(current - 1); }
+      else if (e.key === 'ArrowRight') { show(current + 1); }
+    });
+  }
 })();
