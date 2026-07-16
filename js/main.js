@@ -36,7 +36,7 @@
   var cd = document.getElementById('expo-countdown');
   if (cd) {
     var opening = new Date('2026-08-01T14:00:00+08:00');
-    var closing = new Date('2026-08-28T18:00:00+08:00');
+    var closing = new Date('2026-08-27T18:00:00+08:00');
     var now = new Date();
     if (now < opening) {
       var days = Math.ceil((opening - now) / 86400000);

@@ -1,35 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 106" role="img" aria-label="台灣微光希望關懷協會會徽：雙手捧起的愛心中，孩子伸手觸向微光">
   <defs>
     <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".85"/>
-      <stop offset="45%" stop-color="#FFEFC9" stop-opacity=".38"/>
-      <stop offset="100%" stop-color="#FFEFC9" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".95"/>
+      <stop offset="45%" stop-color="#FFF3D6" stop-opacity=".45"/>
+      <stop offset="100%" stop-color="#FFF3D6" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="mound" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#CDBFA9"/>
-      <stop offset="100%" stop-color="#8F8478" stop-opacity="0"/>
-    </linearGradient>
+    <radialGradient id="mound" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity=".85"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
     <clipPath id="leftHalf"><rect x="0" y="0" width="50" height="106"/></clipPath>
     <clipPath id="heartClip">
       <path d="M50 90 C24 70 8 51 8 33 C8 19 19 9 31 9 C39 9 46.5 13.5 50 21 C53.5 13.5 61 9 69 9 C81 9 92 19 92 33 C92 51 76 70 50 90 Z"/>
     </clipPath>
   </defs>
 
-  <!-- 山丘 -->
-  <path d="M36 97 Q50 83 64 97 Q57 102 50 102 Q43 102 36 97 Z" fill="url(#mound)"/>
+  <!-- 底部光暈 -->
+  <ellipse cx="50" cy="97" rx="20" ry="6" fill="url(#mound)"/>
 
-  <!-- 愛心：右半靛藍、左半橘紅 -->
-  <path d="M50 90 C24 70 8 51 8 33 C8 19 19 9 31 9 C39 9 46.5 13.5 50 21 C53.5 13.5 61 9 69 9 C81 9 92 19 92 33 C92 51 76 70 50 90 Z" fill="#4193C9"/>
-  <path d="M50 90 C24 70 8 51 8 33 C8 19 19 9 31 9 C39 9 46.5 13.5 50 21 C53.5 13.5 61 9 69 9 C81 9 92 19 92 33 C92 51 76 70 50 90 Z" fill="#E8752B" clip-path="url(#leftHalf)"/>
+  <!-- 愛心：左橘 #EF6F0C、右藍 #2497D6（CI 標準色） -->
+  <path d="M50 90 C24 70 8 51 8 33 C8 19 19 9 31 9 C39 9 46.5 13.5 50 21 C53.5 13.5 61 9 69 9 C81 9 92 19 92 33 C92 51 76 70 50 90 Z" fill="#2497D6"/>
+  <path d="M50 90 C24 70 8 51 8 33 C8 19 19 9 31 9 C39 9 46.5 13.5 50 21 C53.5 13.5 61 9 69 9 C81 9 92 19 92 33 C92 51 76 70 50 90 Z" fill="#EF6F0C" clip-path="url(#leftHalf)"/>
 
   <g clip-path="url(#heartClip)">
-    <!-- 捧起的雙手 -->
-    <path d="M14 44 C17 60 28 71 46 76 C39 67 35 56 34 45 C33 37 28 34 23 36 C18 38 14 40 14 44 Z" fill="#B8541B" opacity=".92"/>
-    <path d="M86 44 C83 60 72 71 54 76 C61 67 65 56 66 45 C67 37 72 34 77 36 C82 38 86 40 86 44 Z" fill="#2C6EA3" opacity=".92"/>
+    <!-- 捧起的雙手（白色線條，呼應官方樣式） -->
+    <g fill="none" stroke="#FFFFFF" stroke-width="2.4" stroke-linecap="round" opacity=".9">
+      <path d="M18 42 C19 56 26 67 38 73 C33 65 30 56 29.5 47 C29.2 42 26 40 23 41.5 C20.5 42.7 18.5 43 18 42 Z"/>
+      <path d="M82 42 C81 56 74 67 62 73 C67 65 70 56 70.5 47 C70.8 42 74 40 77 41.5 C79.5 42.7 81.5 43 82 42 Z"/>
+    </g>
     <!-- 頂端微光 -->
-    <circle cx="50" cy="23" r="15" fill="url(#glow)"/>
+    <circle cx="50" cy="20" r="16" fill="url(#glow)"/>
+    <!-- 光芒線 -->
+    <g stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" opacity=".85">
+      <line x1="50" y1="9" x2="50" y2="13.5"/>
+      <line x1="41" y1="12" x2="43.5" y2="15.8"/>
+      <line x1="59" y1="12" x2="56.5" y2="15.8"/>
+      <line x1="37.5" y1="20" x2="42" y2="20"/>
+      <line x1="62.5" y1="20" x2="58" y2="20"/>
+    </g>
     <!-- 內部小丘 -->
-    <ellipse cx="50" cy="75.5" rx="10.5" ry="3" fill="#C9BCA9" opacity=".9"/>
+    <ellipse cx="50" cy="76" rx="11" ry="3" fill="#FFFFFF" opacity=".55"/>
   </g>
 
   <!-- 孩子（白色剪影，右手伸向微光） -->
@@ -43,8 +53,8 @@
   <circle cx="50" cy="47.5" r="5.4" fill="#FFFFFF"/>
 
   <!-- 星光 -->
-  <path d="M50 15.5 L51.7 21.3 L57.5 23 L51.7 24.7 L50 30.5 L48.3 24.7 L42.5 23 L48.3 21.3 Z" fill="#FFFFFF"/>
-  <path d="M36 27 L36.9 29.6 L39.5 30.5 L36.9 31.4 L36 34 L35.1 31.4 L32.5 30.5 L35.1 29.6 Z" fill="#FFFFFF" opacity=".85"/>
-  <path d="M64.5 30 L65.3 32.2 L67.5 33 L65.3 33.8 L64.5 36 L63.7 33.8 L61.5 33 L63.7 32.2 Z" fill="#FFFFFF" opacity=".8"/>
-  <path d="M60 16.5 L60.7 18.3 L62.5 19 L60.7 19.7 L60 21.5 L59.3 19.7 L57.5 19 L59.3 18.3 Z" fill="#FFFFFF" opacity=".7"/>
+  <path d="M50 14 L51.8 20 L57.8 21.8 L51.8 23.6 L50 29.6 L48.2 23.6 L42.2 21.8 L48.2 20 Z" fill="#FFFFFF"/>
+  <path d="M35 26 L35.9 28.6 L38.5 29.5 L35.9 30.4 L35 33 L34.1 30.4 L31.5 29.5 L34.1 28.6 Z" fill="#FFFFFF" opacity=".9"/>
+  <path d="M65.5 29 L66.3 31.2 L68.5 32 L66.3 32.8 L65.5 35 L64.7 32.8 L62.5 32 L64.7 31.2 Z" fill="#FFFFFF" opacity=".85"/>
+  <path d="M71 17.5 L71.7 19.3 L73.5 20 L71.7 20.7 L71 22.5 L70.3 20.7 L68.5 20 L70.3 19.3 Z" fill="#FFFFFF" opacity=".75"/>
 </svg>

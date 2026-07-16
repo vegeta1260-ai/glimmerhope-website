@@ -12,16 +12,16 @@
   --c-ink: #33261A;        /* 深褐墨：內文 */
   --c-muted: #75634E;      /* 灰褐：輔助文字 */
   --c-line: #E3D6BF;       /* 分隔線 */
-  --c-accent: #C75B22;     /* 柿紅：裝飾、圖示、漸層 */
-  --c-accent-btn: #B04E15; /* 柿紅（按鈕）：白字對比 5.3:1 */
-  --c-accent-dark: #9E430F;/* 柿紅深：hover、內文連結 */
-  --c-gold: #E0A44E;       /* 微光金：點綴 */
-  --c-blue: #33506B;       /* 靛藍：輔助（取自會徽） */
+  --c-accent: #EF6F0C;     /* CI 品牌橘：裝飾、圖示、漸層 */
+  --c-accent-btn: #C25200; /* 品牌橘（按鈕底）：白字對比 4.7:1 */
+  --c-accent-dark: #B34F00;/* 品牌橘（文字/連結）：米底對比 4.6:1 */
+  --c-gold: #E0A44E;       /* 微光金：點綴（延伸色） */
+  --c-blue: #2497D6;       /* CI 品牌藍：輔助 */
   --c-cream: #F2E9D5;      /* 深底上的亮文字 */
   --c-cream-muted: #C4B295;/* 深底上的次要文字 */
 
-  /* 字體 */
-  --f-serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", PMingLiU, serif;
+  /* 字體（CI 指定圓體：源泉圓體；網頁以開源圓體 Huninn 呈現） */
+  --f-serif: "Huninn", "GenSenRounded TW B", "jf-openhuninn", "Yuanti TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
   --f-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
   /* 尺寸 */
