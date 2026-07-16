@@ -20,8 +20,8 @@
   --c-cream: #F2E9D5;      /* 深底上的亮文字 */
   --c-cream-muted: #C4B295;/* 深底上的次要文字 */
 
-  /* 字體（CI 指定圓體：源泉圓體；網頁以開源圓體 Huninn 呈現） */
-  --f-serif: "Huninn", "GenSenRounded TW B", "jf-openhuninn", "Yuanti TC", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  /* 字體（網站標題採明體；CI 圓體保留於 Logo 與印刷品） */
+  --f-serif: "Noto Serif TC", "Source Han Serif TC", "Songti TC", PMingLiU, serif;
   --f-sans: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", sans-serif;
 
   /* 尺寸 */
