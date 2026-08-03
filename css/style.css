@@ -559,7 +559,19 @@ li { margin-bottom: .4em; }
 .f-brand img { width: 52px; height: 55px; flex: 0 0 auto; }
 .f-brand .zh { font-family: var(--f-serif); font-weight: 700; font-size: 19px; letter-spacing: .1em; color: var(--c-cream); display: block; }
 .f-brand .en { font-size: 11px; letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: 10px; }
-.f-brand p { margin: 0; font-size: 13.5px; }
+.f-brand p { margin: 0 0 12px; font-size: 13.5px; }
+.social { display: flex; gap: 10px; }
+.social a {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px; border-radius: 50%;
+  background: rgba(242,233,213,.1); border: 1px solid rgba(242,233,213,.22);
+  color: var(--c-cream); transition: background .2s, border-color .2s, color .2s;
+}
+.social a:hover { background: var(--c-accent-btn); border-color: var(--c-accent-btn); color: #fff; }
+.social svg { width: 19px; height: 19px; }
+/* 聯絡頁社群連結 */
+.contact-list .social-inline { display: inline-flex; align-items: center; gap: 7px; }
+.contact-list .social-inline svg { width: 17px; height: 17px; }
 .site-footer h4 { color: var(--c-cream); font-size: 15.5px; letter-spacing: .18em; margin-bottom: 14px; }
 .site-footer ul { list-style: none; padding: 0; margin: 0; }
 .site-footer li { margin-bottom: 8px; }
