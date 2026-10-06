@@ -95,4 +95,27 @@
       else if (e.key === 'ArrowRight') { show(current + 1); }
     });
   }
+
+  // 最新消息：依據點篩選（網址可帶 #banqiao 等直接篩選）
+  var chips = Array.prototype.slice.call(document.querySelectorAll('.filter-chips .chip'));
+  var list = document.getElementById('news-list');
+  if (chips.length && list) {
+    var cards = Array.prototype.slice.call(list.querySelectorAll('.news-card'));
+    function applyFilter(f) {
+      chips.forEach(function (c) { c.setAttribute('aria-pressed', c.getAttribute('data-filter') === f ? 'true' : 'false'); });
+      cards.forEach(function (card) {
+        card.hidden = !(f === 'all' || card.getAttribute('data-place') === f);
+        if (!card.hidden) { card.classList.add('in'); }
+      });
+    }
+    chips.forEach(function (c) {
+      c.addEventListener('click', function () {
+        var f = c.getAttribute('data-filter');
+        applyFilter(f);
+        if (history.replaceState) { history.replaceState(null, '', f === 'all' ? location.pathname : '#' + f); }
+      });
+    });
+    var initial = location.hash.slice(1);
+    if (initial && chips.some(function (c) { return c.getAttribute('data-filter') === initial; })) { applyFilter(initial); }
+  }
 })();

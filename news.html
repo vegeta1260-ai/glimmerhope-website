@@ -61,8 +61,72 @@
 
   <section class="section">
     <div class="wrap">
-      <div class="news-cards">
-        <article class="news-card reveal">
+      <!-- NEWS:START -->
+      <div class="filter-chips" role="group" aria-label="依據點篩選">
+        <button type="button" class="chip" data-filter="all" aria-pressed="true">全部</button>
+        <button type="button" class="chip" data-filter="banqiao" aria-pressed="false">板橋明穗</button>
+        <button type="button" class="chip" data-filter="zhongli" aria-pressed="false">中壢宣愛</button>
+        <button type="button" class="chip" data-filter="ruifang" aria-pressed="false">瑞芳愛鄰</button>
+        <button type="button" class="chip" data-filter="org" aria-pressed="false">協會活動</button>
+      </div>
+      <div class="news-cards" id="news-list">
+        <article class="news-card reveal" data-place="banqiao">
+          <div class="thumb" style="background-image:url('assets/activity/2026-10-banqiao-pointillism-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜板橋明穗</span><time datetime="2026-10-04">2026.10.04</time></div>
+            <h3><a href="activity-2026-10-banqiao-pointillism.html">板橋明穗據點：點描法，一點一點畫出自己的世界</a></h3>
+            <p class="excerpt">認識三原色、互補色與相似色，再用點的大小、疏密和排列做出光感。同樣的技法，在每個孩子手裡變成不一樣的世界。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="zhongli">
+          <div class="thumb" style="background-image:url('assets/activity/2026-10-zhongli-botero-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜中壢宣愛</span><time datetime="2026-10-03">2026.10.03</time></div>
+            <h3><a href="activity-2026-10-zhongli-botero.html">帶中壢據點的孩子，走進波特羅的圓潤世界</a></h3>
+            <p class="excerpt">感謝中正紀念堂管理處與聯合數位文創的公益觀展安排，微光帶著中壢宣愛據點的孩子到台北看《圓潤的魔法——波特羅特展》。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/2026-09-ruifang-chagall-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜瑞芳愛鄰</span><time datetime="2026-09-19">2026.09.19</time></div>
+            <h3><a href="activity-2026-09-ruifang-chagall.html">瑞芳愛鄰據點：跟著夏卡爾，飛進我的夢想花園</a></h3>
+            <p class="excerpt">把壓力畫成一隻怪獸，再跟它說說話；然後畫一座只屬於自己的夢想花園。微光回到起點瑞芳，和孩子們一起飛。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="banqiao">
+          <div class="thumb" style="background-image:url('assets/activity/2026-09-banqiao-matisse-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜板橋明穗</span><time datetime="2026-09-06">2026.09.06</time></div>
+            <h3><a href="activity-2026-09-banqiao-matisse.html">板橋明穗據點：用馬蒂斯的拼貼，做一張自己的雜誌封面</a></h3>
+            <p class="excerpt">剪下喜歡的圖片和色塊，拼成一張「雜誌封面」，替它取名字，再說說自己的想法。板橋據點每月固定課程正式開始。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="zhongli">
+          <div class="thumb" style="background-image:url('assets/activity/2026-09-zhongli-first-class-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜中壢宣愛</span><time datetime="2026-09-05">2026.09.05</time></div>
+            <h3><a href="activity-2026-09-zhongli-first-class.html">桃園第一個據點開課：中壢宣愛「心情的顏色」</a></h3>
+            <p class="excerpt">微光第一次走出新北，在桃園市宣愛社區關懷協會開設藝術陪伴課程。第一堂課，從「如果今天的心情是一種顏色」開始。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="org">
+          <div class="thumb" style="background-image:url('assets/activity/2026-08-fju-family-day-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">協會活動</span><time datetime="2026-08-08">2026.08</time></div>
+            <h3><a href="activity-2026-08-fju-family-day.html">輔大附設醫院親子日：用《情緒大飯店》認識心情</a></h3>
+            <p class="excerpt">受邀參加輔仁大學附設醫院親子日，育妏老師帶著各據點的孩子讀繪本、認識情緒，再把心裡的感受畫出來。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="org">
+          <div class="thumb" style="background-image:url('assets/activity/founder-speech-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">理事長致詞</span><time datetime="2026-08-01">2026.08.01</time></div>
+            <h3><a href="founder-speech-2026-08-01.html">理事長林秀霞開幕致詞：畫展不是重點，是請大家一起關心孩子</a></h3>
+            <p class="excerpt">「浮生藝憶・微光傳愛」開幕當天，理事長談她為什麼從畫畫開始陪伴受傷的孩子，以及藝術療癒之後的下一步。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="org">
           <div class="thumb" style="background-image:url('assets/gallery/artwork-title-thumb.jpg')" role="presentation"></div>
           <div class="body">
             <div class="meta"><span class="cat">新聞稿</span><time datetime="2026-08-01">2026.08</time></div>
@@ -70,7 +134,7 @@
             <p class="excerpt">新聞稿整理展覽緣起、開幕活動、公益主題與媒體採訪資訊。</p>
           </div>
         </article>
-        <article class="news-card reveal">
+        <article class="news-card reveal" data-place="org">
           <div class="thumb" style="background-image:url('assets/gallery/opening-03-thumb.jpg')" role="presentation"></div>
           <div class="body">
             <div class="meta"><span class="cat">展覽回顧</span><time datetime="2026-08-01">2026.08.01 – 08.27</time></div>
@@ -78,15 +142,23 @@
             <p class="excerpt">展覽已於 8 月 27 日圓滿落幕。回顧 8 月 1 日開幕典禮流程與照片紀錄，感謝每一位到中正紀念堂看展的朋友。</p>
           </div>
         </article>
-        <article class="news-card reveal">
-          <div class="thumb" style="background-image:url('assets/art-flock.jpg')" role="presentation"></div>
+        <article class="news-card reveal" data-place="banqiao">
+          <div class="thumb" style="background-image:url('assets/activity/2026-07-banqiao-first-visit-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜板橋明穗</span><time datetime="2026-07-22">2026.07.22</time></div>
+            <h3><a href="activity-2026-07-banqiao-first-visit.html">第一次到板橋明穗教會，和孩子們一起畫畫</a></h3>
+            <p class="excerpt">從幼稚園到國中二年級的孩子，在明穗教會像課後班的教室裡等著畫紙和顏料。微光與板橋據點的合作，從這一天開始。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/charity-exhibition-02-thumb.jpg')" role="presentation"></div>
           <div class="body">
             <div class="meta"><span class="cat">活動回顧</span><time datetime="2026-06-27">2026.06.27 – 07.12</time></div>
             <h3><a href="news-2026-06-charity-exhibition.html">《微光童心・看見希望》關懷受虐兒公益畫展圓滿落幕</a></h3>
             <p class="excerpt">展出瑞芳繪畫班孩子十個月來的作品，由台北永福扶輪社、福藝衛星扶輪社主辦，本會與新北愛鄰關懷協會共同協力。</p>
           </div>
         </article>
-        <article class="news-card reveal">
+        <article class="news-card reveal" data-place="org">
           <div class="thumb ph"><img src="assets/logo.svg" alt=""></div>
           <div class="body">
             <div class="meta"><span class="cat">協會消息</span><time datetime="2026-06-10">2026.06.10</time></div>
@@ -94,7 +166,48 @@
             <p class="excerpt">協會於 2026 年 4 月經內政部立案、6 月完成法人登記；第一個兒童藝術陪伴課程已開課，7 月起增加三個班級。</p>
           </div>
         </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/2026-05-ruifang-artworks-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜瑞芳愛鄰</span><time datetime="2026-05-19">2026.05</time></div>
+            <h3><a href="activity-2026-05-ruifang-artworks.html">瑞芳愛鄰據點：孩子們的繪畫成果</a></h3>
+            <p class="excerpt">臨摹梵谷的〈星夜〉、畫郵輪、畫愛心和彩虹，也畫自己想像的怪獸。瑞芳繪畫班孩子們這一年的作品。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/2026-04-ruifang-seurat-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜瑞芳愛鄰</span><time datetime="2026-04-24">2026.04.24</time></div>
+            <h3><a href="activity-2026-04-ruifang-seurat.html">瑞芳愛鄰據點：跟著秀拉，一點一點畫出一幅畫</a></h3>
+            <p class="excerpt">孩子們認識法國畫家秀拉和他的〈大碗島的星期天下午〉，用一個一個色點，排出人物、草地與光影。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="org">
+          <div class="thumb" style="background-image:url('assets/activity/2026-04-general-assembly-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">協會活動</span><time datetime="2026-04-18">2026.04.18</time></div>
+            <h3><a href="activity-2026-04-general-assembly.html">協會成立大會暨第一次會員大會，選出首屆理監事</a></h3>
+            <p class="excerpt">台灣微光希望關懷協會召開成立大會暨第一屆第一次會員大會，選出第一屆理監事，林秀霞女士當選首屆理事長。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/2026-03-ruifang-half-year-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜瑞芳愛鄰</span><time datetime="2026-03-06">2026.03.06</time></div>
+            <h3><a href="activity-2026-03-ruifang-half-year.html">瑞芳繪畫療癒班滿半年：孩子臉上有了笑容</a></h3>
+            <p class="excerpt">繪畫療癒班開課半年多，孩子們從畏縮、驚懼的眼神，慢慢變得開心、有自信。理事長帶著獎品到瑞芳，陪孩子一起畫刮畫。</p>
+          </div>
+        </article>
+        <article class="news-card reveal" data-place="ruifang">
+          <div class="thumb" style="background-image:url('assets/activity/2025-08-ruifang-first-class-01-thumb.jpg')" role="presentation"></div>
+          <div class="body">
+            <div class="meta"><span class="cat">據點活動｜瑞芳愛鄰</span><time datetime="2025-08-23">2025.08.23</time></div>
+            <h3><a href="activity-2025-08-ruifang-first-class.html">瑞芳兒童繪畫療癒班開課：微光的起點</a></h3>
+            <p class="excerpt">2025 年 8 月，永福福藝衛星扶輪社在新北瑞芳開設第一個兒童繪畫療癒班。這堂課，後來成為台灣微光希望關懷協會的起點。</p>
+          </div>
+        </article>
       </div>
+      <!-- NEWS:END -->
     </div>
   </section>
 
